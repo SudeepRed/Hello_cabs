@@ -1,4 +1,5 @@
 import pg from "pg";
+import utils from "../api/v1/utils/utility.js";
 const { Pool } = pg;
 const db = new Pool({
   host: "localhost",
@@ -7,14 +8,13 @@ const db = new Pool({
   database: "hellocabs",
   port: "3000",
 });
-db.connect((err,client,done) => {
+db.connect((err, client, done) => {
   if (err) console.log("error");
   console.log("DB connected");
 });
-
-// db.query('show tables',(err, results)=>{
-//     if(err) throw err;
-//     console.log(results);
-// })
+db.query(utils.distanceQuery, (err, client, done) => {
+  if (err) throw err;
+  console.log("distance function created");
+});
 
 export default db;

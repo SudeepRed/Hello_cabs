@@ -21,9 +21,7 @@ function createTable() {
     console.log(result);
   });
 }
-function insertValues() {
-
-}
+function insertValues() {}
 
 // getAllDrivers
 async function getAllDrivers() {
@@ -45,14 +43,14 @@ async function getDriverPosition(id) {
   return rows[0];
 }
 // updatePosition
-async function updatePosition(id,position) {
+async function updatePosition(id, position) {
   const query = `
   UPDATE driver SET 
   x_coordinate = '${position.x_loc}', 
   y_coordinate = '${position.y_loc} 
   'where id = '${id}';
-  `
-db.query(query);
+  `;
+  db.query(query);
 }
 // getMyRides
 
@@ -62,5 +60,5 @@ export default {
   getAllDrivers,
   getDriverByID,
   getDriverPosition,
-  updatePosition
+  updatePosition,
 };

@@ -1,5 +1,0 @@
-/* 
-getMyRides
-getRider
-getMyRides
-*/
